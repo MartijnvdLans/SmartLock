@@ -7,7 +7,7 @@ In this Manual you will learn how to create a Telegram bot and connect it to you
 ## Required hardware
 1. Arduino ESP8266 board
 2. Servomotor
-3. 3 Jumpwires to connect to the LEDstrip *Female > Male*
+3. 3 Jumpwires to connect to the LEDstrip *(Female > Male)*
 
 
 ### Step 1: Connect your board with the LEDstrip
