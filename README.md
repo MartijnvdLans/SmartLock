@@ -25,6 +25,12 @@ Connect these 3 with the board accordingly for this Manual
 - GND -> GND
 
 
+![image](https://user-images.githubusercontent.com/74150653/198285625-9179f727-ec87-4fdf-b078-b5d072b3e2d2.png)
+
+
+
+
+
 ### Step 2 Installing the required Library
 
 
