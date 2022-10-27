@@ -27,7 +27,9 @@ Connect these 3 with the board accordingly for this Manual
 
 ### Step 2 Installing the required Library
 
+
 First you [have to download this zip](https://github.com/witnessmenow/Universal-Arduino-Telegram-Bot/archive/master.zip) containing the library for Telegram
+
 Go to **Sketch -> Include Library -> Manage Libraries -> Add.ZIP Library...** and add the downloaded library
 
 
@@ -45,7 +47,9 @@ Go to **Sketch -> Include Library -> Manage Libraries -> Add.ZIP Library...** an
 ```
 
 #define WIFI_SSID "WIFI_NAME"
+
 #define WIFI_PASS "PASSWORD"
+
 
 To your wifi name and password (Make sure not to use a 5hz connection).
 
