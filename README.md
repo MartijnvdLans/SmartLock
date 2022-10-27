@@ -72,10 +72,10 @@ Servo myservo;
 int lockStatus = 0;
 
 // Wifi network station credentials
-#define WIFI_SSID "WIFI"
-#define WIFI_PASSWORD "PASSWORD"
+#define WIFI_SSID "Martijn"
+#define WIFI_PASSWORD "joejoejoe"
 // Telegram BOT Token (Get from Botfather)
-#define BOT_TOKEN "BOTTOKEN"
+#define BOT_TOKEN "5755708131:AAHYIGeLQUXXFPt0RhHdOUuwmJqggcDS_Ls"
 
 const unsigned long BOT_MTBS = 1000; // mean time between scan messages
 
@@ -127,10 +127,10 @@ void handleNewMessages(int numNewMessages)
     if (text == "/start")
     {
       String welcome = "Welcome to Universal Arduino Telegram Bot library, " + from_name + ".\n";
-      welcome += "This is Flash Led Bot example.\n\n";
-      welcome += "/opendoor : to switch the Led ON\n";
-      welcome += "/closedoor : to switch the Led OFF\n";
-      welcome += "/status : Returns current status of LED\n";
+      welcome += "This is a bot for the SmartLock to open and close the door when ur not home.\n\n";
+      welcome += "/opendoor : to UNLOCK the door\n";
+      welcome += "/closedoor : to LOCK the door\n";
+      welcome += "/status : Returns current status of the door\n";
       bot.sendMessage(chat_id, welcome, "Markdown");
     }
   }
@@ -209,8 +209,41 @@ To your BOT token, the HTTP API you saved for later.
 Connect your board to your laptop of phone and watch the magic happen when you say /closedoor and /opendoor
 You have now made your very own 'smart lock' prototype!
 
+Now your chat should look like this!
+
+![image](https://user-images.githubusercontent.com/74150653/198299575-a2028946-c79e-45f3-a3c5-98cc7864c0db.png)
+
+
+And your /closedoor and /opendoor should look like this!
+
+![image](https://github.com/MartijnvdLans/SmartLock/blob/main/close.gif?raw=true)
+![image](https://github.com/MartijnvdLans/SmartLock/blob/main/open.gif?raw=true)
+
+
 
 
 ## Errors
 
-TBA ...
+1. Void SetUp()
+
+1 One of the mistakes I made was that I was combining 2 codes to make them work by doing so I accidentely added a second void setup, causing it to have an error. It was a small error, but one that did take me a while to figure out what I was doing wrong with the void setup() At first I was afraid it was not possible to combine these 2 codes.
+
+![image](https://user-images.githubusercontent.com/74150653/198295649-9e6673aa-7f64-425e-b935-a69294a2d258.png)
+
+
+2. DIN
+
+A very clumsy but real mistake. While I got no errors and swore I had done everything right, it did not work. Once I looked at the code and checked everything I noticed the D5 was not selected, a very dumb, but real mistake.
+
+
+![image](https://user-images.githubusercontent.com/74150653/198296789-3a130a4d-0329-4a69-8e36-577be19de47e.png)
+
+
+
+3. Bot not working
+
+Again for this error I did not receive an error, but the bot just never seemed to respond to me whenever I chatted. later I noticed it was because I chatted with a non working bot that had almost the exact name as mine.
+
+4. 3v3 or 5v?
+
+Another problem I came across was that officially the servo motor needs a 5v supply, sadly the ESP8266 does not have one. When I connected it with my laptop if ept connecting and disconnecting, which was very annoying and frustrating. Later I found out that when I connected it to my phone, after adding the code, it did not keep reconnecting.
